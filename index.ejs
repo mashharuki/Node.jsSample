@@ -2,16 +2,19 @@
 <html lang="ja">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="test.css">
-        <title>Index</title>
+        <link rel="stylesheet" href="test.css" rel="stylesheet">
+        <title>
+            <%=title %>
+        </title>
     </head>
     <body>
         <header>
-            <h1>Index</h1>
+            <h1>
+                <%=title %>
+            </h1>
         </header>
         <div role="main">
-            <p>This is Index Page.</p>
-            <p>これは、EJSを使ったWebページです。</p>
+            <%=content %>
         </div>
     </body>
 </html>
