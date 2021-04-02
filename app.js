@@ -8,6 +8,7 @@ const url = require('url');
 
 // ejsファイルの読み込み
 const index_page = fs.readFileSync('./index.ejs', 'utf8');
+const other_page = fs.readFileSync('./other.ejs', 'utf8')
 // cssファイルの読み込み
 const test_css = fs.readFileSync('./test.css', 'utf8');
 // サーバーオブジェクトを構築する。
@@ -22,6 +23,7 @@ function getFromClient(request, response) {
     // URLを構築するための変数を用意
     var url_parts = url.parse(request.url);
     switch (url_parts.pathname) {
+        // index画面
         case '/':
             // index.ejsをレンダリングする。
             var content = ejs.render(index_page, {
@@ -32,7 +34,18 @@ function getFromClient(request, response) {
             response.write(content);
             response.end();
             break;
-        
+
+        // other画面
+        case '/other':
+            var content = ejs.render(other_page, {
+                title: "Other",
+                content: "これは新しく用意したWebページです。",
+            });
+            response.writeHead(200, { 'Content-Type': 'text/html' });
+            response.write(content);
+            response.end();
+            break;    
+
         case '/test.css':
             response.writeHead(200, { 'Content-Type': 'text/css' });
             response.write(test_css);
