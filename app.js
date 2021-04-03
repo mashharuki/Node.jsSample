@@ -18,14 +18,14 @@ var data = {
     'Hanako': '080-888-999',
     'Sachiko': '070-777-777',
     'Ichiro': '060-666-666'
-};
+}
 // オブジェクト変数 data2を用意する。
 var data2 = {
     'Taro': ['taro@yamada', '09-999-999', 'Tokyo'],
     'Hanako': ['hanako@flower', '080-888-999', 'Yokohama'],
     'Sachiko': ['sachi@happy', '070-777-777', 'Nagoya'],
     'Ichiro': ['ichi@baseball', '060-666-666', 'USA'],
-};
+}
 // サーバーオブジェクトを構築する。
 var server = http.createServer (getFromClient);
 // ポート3000で展開する。(待ち受け状態にする。)
